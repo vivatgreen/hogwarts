@@ -20,5 +20,6 @@ public interface FacultyService {
 
     Collection<Faculty> allFaculty();
 
-    Faculty deleteByOleg(Long id);
+    String longestFacultyName();
+
 }

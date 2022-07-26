@@ -87,7 +87,7 @@ public class StudentController {
         return ResponseEntity.ok(studentTotalNumber);
     }
 
-    @GetMapping("average-age")
+    @GetMapping("average-age-sql")
     public ResponseEntity<Integer> getStudentsAverageAge() {
         Integer studentsAverageAge = studentService.studentsAverageAge();
         if (studentsAverageAge == null) {
@@ -96,8 +96,23 @@ public class StudentController {
         return ResponseEntity.ok(studentsAverageAge);
     }
 
+
     @GetMapping("last-five")
     public Collection<Student> lastFiveStudents() {
         return studentService.lastFiveStudents();
+    }
+
+    @GetMapping("start-A")
+    public Collection<String> getSortedAZListOfAllStudedentsNames() {
+        return studentService.sortedAZListOfAllStudedentsNames();
+    }
+
+    @GetMapping("average-age-stream")
+    public ResponseEntity<Double> getStudentsAverageAgeStream() {
+        Double studentsAverageAge = studentService.studentsAverageAgeStream();
+        if (studentsAverageAge == null) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(studentsAverageAge);
     }
 }
