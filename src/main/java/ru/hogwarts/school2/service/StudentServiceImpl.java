@@ -136,6 +136,7 @@ public class StudentServiceImpl implements StudentService {
         System.out.println("Student №2:  " + students.get(1).getName());
         thread1.start();
         thread2.start();
+
 //        System.out.println("Student №7:  " + students.get(6).getName());
 //        System.out.println("Student №8:  " + students.get(7).getName());
 
