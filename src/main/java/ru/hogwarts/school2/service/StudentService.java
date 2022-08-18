@@ -4,6 +4,7 @@ import ru.hogwarts.school2.model.Faculty;
 import ru.hogwarts.school2.model.Student;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface StudentService {
     Student createStudent(Student student);
@@ -33,4 +34,8 @@ public interface StudentService {
     Collection<String> sortedAZListOfAllStudedentsNames();
 
     double studentsAverageAgeStream();
+
+    void getNameStudentsToConsoleSynch();
+
+    List<Student> getNameStudentsToConsole();
 }

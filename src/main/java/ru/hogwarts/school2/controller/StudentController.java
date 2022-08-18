@@ -8,6 +8,7 @@ import ru.hogwarts.school2.model.Student;
 import ru.hogwarts.school2.service.StudentService;
 
 import java.util.Collection;
+import java.util.List;
 
 import static org.springframework.http.ResponseEntity.ok;
 
@@ -116,5 +117,19 @@ public class StudentController {
             return ResponseEntity.noContent().build();
         }
         return ok(studentsAverageAge);
+    }
+    @GetMapping("/name-thread")
+    public ResponseEntity<String> getNameStudentsToConsole() {
+        List<Student> listOfStudentName = studentService.getNameStudentsToConsole() ;
+        if (listOfStudentName == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ok("See the list of student names in the console");
+    }
+
+    @GetMapping("/name-synch")
+    public String getNameStudentsToConsoleSynch() {
+        studentService.getNameStudentsToConsoleSynch();
+        return  "See the list of student names in the console";
     }
 }
