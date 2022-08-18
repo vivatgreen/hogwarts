@@ -9,6 +9,8 @@ import ru.hogwarts.school2.service.StudentService;
 
 import java.util.Collection;
 
+import static org.springframework.http.ResponseEntity.ok;
+
 @RestController
 @RequestMapping("student")
 public class StudentController {
@@ -24,7 +26,7 @@ public class StudentController {
         if (studentGet == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(studentGet);
+        return ok(studentGet);
     }
 
     @PostMapping
@@ -42,14 +44,14 @@ public class StudentController {
         if (studentEdit == null) {
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok(studentEdit);
+        return ok(studentEdit);
     }
 
 
     @DeleteMapping("{idDelete}")
     public ResponseEntity deleteStudent(@PathVariable Long idDelete) {
         studentService.deleteStudent(idDelete);
-        return ResponseEntity.ok().build();
+        return ok().build();
     }
 
     @GetMapping("age/{age}")
@@ -84,7 +86,7 @@ public class StudentController {
         if (studentTotalNumber == null) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(studentTotalNumber);
+        return ok(studentTotalNumber);
     }
 
     @GetMapping("average-age-sql")
@@ -93,7 +95,7 @@ public class StudentController {
         if (studentsAverageAge == null) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(studentsAverageAge);
+        return ok(studentsAverageAge);
     }
 
 
@@ -113,6 +115,6 @@ public class StudentController {
         if (studentsAverageAge == null) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(studentsAverageAge);
+        return ok(studentsAverageAge);
     }
 }
