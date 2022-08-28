@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 @Service
 public class FacultyServiceImpl implements FacultyService{
 
-    Logger logger = LoggerFactory.getLogger(FacultyService.class);
+   private final Logger logger = LoggerFactory.getLogger(FacultyService.class);
 
     private final FacultyRepository facultyRepository;
 

@@ -22,7 +22,7 @@ import java.util.List;
 @Service
 public class AvatarServiceImpl implements AvatarService{
 
-    Logger logger = LoggerFactory.getLogger(AvatarService.class);
+  private final Logger logger = LoggerFactory.getLogger(AvatarService.class);
 
     public static final int IMAGE_SIZE = 1024;
 
