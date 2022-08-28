@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 @Service
 public class ExampleServiceImpl implements ExampleService {
 
-    Logger logger = LoggerFactory.getLogger(ExampleService.class);
+   private final Logger logger = LoggerFactory.getLogger(ExampleService.class);
 
     @Override
     public Integer streamExample() {
