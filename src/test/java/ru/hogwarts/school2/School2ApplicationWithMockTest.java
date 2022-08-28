@@ -64,4 +64,5 @@ public class School2ApplicationWithMockTest {
                 .andExpect(jsonPath("$.name").value(name))
                 .andExpect(jsonPath("$.color").value(color));
     }
+
 }
